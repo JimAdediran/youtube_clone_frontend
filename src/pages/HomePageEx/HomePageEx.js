@@ -12,7 +12,7 @@ const HomePage = () => {
   const [user, token] = useAuth();
   const [videoData, setVideoData] = useState([]);
 
-  
+  const BUILD_ENV = process.env.REACT_APP_YT_API_Key  
 
 
 
@@ -22,7 +22,7 @@ const HomePage = () => {
 
   const fetchVideoData = async (searchTerm = "bob ross") => {
     try {
-      let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&type=video&part=snippet&key=${REACT_APP_YT_API_Key}`
+      let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&type=video&part=snippet&key=${BUILD_ENV}`
       );
       setVideoData(response.data.items);
       console.log(response.data.items)
