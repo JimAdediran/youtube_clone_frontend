@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoDisplay = (props) => {
 
-let currentVideo = `http://www.youtube.com/embed/${props.id}`
+let currentVideo = `https://www.youtube.com/embed/${props.id}`
 
     return (
         <div>
