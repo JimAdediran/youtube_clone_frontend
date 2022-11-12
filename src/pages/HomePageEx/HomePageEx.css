@@ -1,0 +1,7 @@
+.home-align {
+    display: flex;
+    justify-content: space-evenly;
+  }
+.homepage {
+    color: white;
+  }
