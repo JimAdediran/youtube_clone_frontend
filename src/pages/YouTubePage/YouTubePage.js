@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-import { KEY } from "../../localKey"
 import { Link, useParams } from "react-router-dom"
 import SearchBar from "../../components/SearchBar/SearchBar"
 
@@ -17,7 +16,7 @@ const YouTubePage = () => {
     const fetchVideo = async () => {
     try{
         let response = await axios.get(
-            `https://www.googleapis.com/youtube/v3/search?q=${search}&part=snippet&key=${KEY}`
+            `https://www.googleapis.com/youtube/v3/search?q=${search}&part=snippet&key=${REACT_APP_YT_API_Key}`
         );
         setVideos(response.data);
     } catch (error) {

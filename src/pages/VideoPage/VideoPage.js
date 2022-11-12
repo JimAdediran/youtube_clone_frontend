@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { KEY } from "../../localKey";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import AddComment from "../../components/AddComment/AddComment";
@@ -22,7 +21,7 @@ const VideoPage = () => {;
 
 const fetchRelatedVideos = async (search = "nba") => {
     try {
-        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${id}&type=video&part=snippet&key=${KEY}`
+        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${id}&type=video&part=snippet&key=${REACT_APP_YT_API_Key}`
         );
         setVideos(response.data.items);
         console.log(response.data.items)

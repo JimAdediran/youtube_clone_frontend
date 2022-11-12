@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import { KEY } from "../../localKey"
 import axios from "axios";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { Link } from "react-router-dom"
@@ -23,7 +22,7 @@ const HomePage = () => {
 
   const fetchVideoData = async (searchTerm = "bob ross") => {
     try {
-      let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&type=video&part=snippet&key=${KEY}`
+      let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&type=video&part=snippet&key=${REACT_APP_YT_API_Key}`
       );
       setVideoData(response.data.items);
       console.log(response.data.items)
