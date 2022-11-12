@@ -5,8 +5,7 @@ const VideoDisplay = (props) => {
 let currentVideo = `https://www.youtube.com/embed/${props.id}`
 
     return (
-        <div>
-        <div>
+       
         <iframe 
         id="player" 
         type="text/html" 
@@ -15,15 +14,8 @@ let currentVideo = `https://www.youtube.com/embed/${props.id}`
         src={currentVideo}
         frameborder="0">   
         </iframe>
-        </div>
-        <div>
-            Title: {props.title}
-        </div>
-        <div>
-            Description: {props.description}
-        </div>
-        </div>
-    );
+    )
+    
 };
 
 export default VideoDisplay
