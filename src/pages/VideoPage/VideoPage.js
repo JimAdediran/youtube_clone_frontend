@@ -11,8 +11,8 @@ const VideoPage = () => {;
     const { id } = useParams();
     const { title, description } = useParams()
     const [videos, setVideos] = useState("")
-   
 
+    const BUILD_ENV = process.env.REACT_APP_YT_API_Key  
 
     useEffect(() => {
         fetchRelatedVideos();
@@ -21,7 +21,7 @@ const VideoPage = () => {;
 
 const fetchRelatedVideos = async (search = "nba") => {
     try {
-        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${id}&type=video&part=snippet&key=${REACT_APP_YT_API_Key}`
+        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${id}&type=video&part=snippet&key=${BUILD_ENV}`
         );
         setVideos(response.data.items);
         console.log(response.data.items)

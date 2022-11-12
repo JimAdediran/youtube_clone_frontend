@@ -3,9 +3,12 @@ import axios from "axios"
 import { Link, useParams } from "react-router-dom"
 
 
+
 const SearchResultsPage = () => {
     const {search} = useParams()
     const [videos, setVideos] = useState('')
+
+    const BUILD_ENV = process.env.REACT_APP_YT_API_Key  
  
     useEffect(() => {
         fetchVideo()        
@@ -15,7 +18,7 @@ const SearchResultsPage = () => {
     const fetchVideo = async () => {
     try{
         let response = await axios.get(
-            `https://www.googleapis.com/youtube/v3/search?q=${search}&part=snippet&key=${REACT_APP_YT_API_Key}`
+            `https://www.googleapis.com/youtube/v3/search?q=${search}&part=snippet&key=${BUILD_ENV}`
         );
         setVideos(response.data);
     } catch (error) {
