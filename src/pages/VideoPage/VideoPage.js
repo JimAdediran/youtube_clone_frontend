@@ -35,7 +35,6 @@ return (
   <div>
         <div className="video">
           <VideoDisplay id={id} />
-          <AddComment />
         </div>
         <div>
         {videos && videos.map((video) => (
